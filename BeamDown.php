@@ -57,7 +57,6 @@ class BeamDown {
             echo $this->showErrors();
             exit(3);
         }
-        $this->fragments = array_merge($this->fragments, $this->readTemplates());
     }
 
     /**
@@ -207,6 +206,7 @@ class BeamDown {
         }
         if ($success) {
             $this->path = $path;
+            $this->fragments = array_merge($this->fragments, $this->readTemplates());
         }
         return $success;
     }
